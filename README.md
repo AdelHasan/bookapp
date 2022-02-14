@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+# General Assembly SEIR 110-WC Project 2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Links
 
-## Available Scripts
+- [Github Pages]()
 
-In the project directory, you can run:
+## Project Description
+- In this project I will build a responsive UI using react and data drawn from the Google Books API
+- The project will be built mobile first, with responsive adjustment to the page for tablet and desktop views
+- The UI will allow users to search for titles, and return book card components for each returned query. These will provide an overview of the title, along with a link to a component that renders detailed information on a selected title
+- I would also like to incorporate the embedded viewer API to allow users to read available portions of the title within the app itself
+- I also aim to provide library management features to allow users to manage and interact with their own Google Books library from the app
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API
 
-### `npm test`
+https://www.googleapis.com/books/v1/volumes?q=tree&key=AIzaSyDgs0P5NgyAp6l1iSp--NyhrT9MmDa1U9k
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Below is a sample of data provided on each volume from the above API request
 
-### `npm run build`
+```
+{
+    "kind": "books#volume",
+    "id": "DvhrDwAAQBAJ",
+    "etag": "t0bFEEs04JA",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/DvhrDwAAQBAJ",
+    "volumeInfo": {
+        "title": "The Tree Book",
+        "subtitle": "Superior Selections for Landscapes, Streetscapes, and Gardens",
+        "authors": [
+            "Michael A. Dirr",
+            "Keith S. Warren"
+        ],
+        "publisher": "Timber Press",
+        "publishedDate": "2019-04-30",
+        "description": "“A boon to all those who plant, care for, and love trees.”—Nina Bassuk, author of Trees in the Urban Landscape The Tree Book is the go-to reference to more than 2,400 species and cultivars, from two of the biggest names in horticulture—Michael A. Dirr and Keith S. Warren. The featured trees include those widely available in the nursery trade, some new and promising choices, and a selection of overlooked options that deserve renewed interest. Each tree profile includes the common and botanical names along with details on foliage; flowers, seeds, fruits, and cones; native range; adaptability; and popular uses in landscapes. The Tree Book is a must-have resource for landscape architects, city foresters, horticulturists, and enthusiastic home gardeners.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9781604699180"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "1604699183"
+            }
+        ],
+        "readingModes": {
+            "text": true,
+            "image": true
+        },
+        "pageCount": 900,
+        "printType": "BOOK",
+        "categories": [
+            "Gardening"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.1.0.preview.3",
+        "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+        },
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=DvhrDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=DvhrDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=DvhrDwAAQBAJ&printsec=frontcover&dq=tree&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=DvhrDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=DvhrDwAAQBAJ"
+    },
+    "saleInfo": {
+        "country": "US",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+            "amount": 30.95,
+            "currencyCode": "USD"
+        },
+        "retailPrice": {
+            "amount": 17.02,
+            "currencyCode": "USD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=DvhrDwAAQBAJ&rdid=book-DvhrDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+            {
+                "finskyOfferType": 1,
+                "listPrice": {
+                    "amountInMicros": 30950000,
+                    "currencyCode": "USD"
+                },
+                "retailPrice": {
+                    "amountInMicros": 17020000,
+                    "currencyCode": "USD"
+                },
+                "giftable": true
+            }
+        ]
+    },
+    "accessInfo": {
+        "country": "US",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+            "isAvailable": true,
+            "acsTokenLink": "http://books.google.com/books/download/The_Tree_Book-sample-epub.acsm?id=DvhrDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+            "isAvailable": true,
+            "acsTokenLink": "http://books.google.com/books/download/The_Tree_Book-sample-pdf.acsm?id=DvhrDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=DvhrDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+    },
+    "searchInfo": {
+        "textSnippet": "The Tree Book is a must-have resource for landscape architects, city foresters, horticulturists, and enthusiastic home gardeners."
+    }
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wireframes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+- [wireframes](https://imgur.com/a/RugYkTK)
+- [react architecture](https://imgur.com/a/ym7QO1T)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### MVP/PostMVP - 5min
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+#### MVP
+- Search and view correctly formatted book cards
+- Library management and display user's own bookshelves
+- Reponsive Design for Mobile, Tablet and Desktop
+- Correct implementation of State
+- React Router to navigate between search and library pages
+- 5 functional components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### PostMVP
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Embedded Reader
+- Ability to store notes/snippets from books
 
-### Code Splitting
+## Components
+##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-### Analyzing the Bundle Size
+| Component | Description | 
+| --- | :---: |  
+| App | Sets up app with React Router | 
+| Header | Renders the header, including the nav | 
+| Footer | Renders the footer |
+| Book Card | Renders Cards for each volume |
+| Detailed Book View | Renders Detailed view for a selected volume |
+| Search Box | Renders search bar that makes API request with input query |
+| Reader | Renders embedded reader view for selected volume |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Unless otherwise noted, time is listed in hours:
 
-### Advanced Configuration
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Create React app and component files, initialize Router | H | 1 | TBD | TBD |
+| Boilerplate UI (Header, Footer, Nav) | H | 2 | TBD | TBD |
+| Generate API requests that render appropriate data | H | 3 | TBD | TBD |
+| Incorporate API requests into functional search component | H | 2 | TBD | TBD |
+| Build Card Components to render Book Data | H | 2 | TBD | TBD |
+| Build Detailed View for Books | H | 2 | TBD | TBD |
+| Incorporate User Library (with OAauth 2.0 authentication) | H | 5 | TBD | TBD |
+| Instantiate Routes for Search, Library, Reader | H | 3 | TBD | TBD |
+| Polish UI: Colors, Fonts, Display indiscrepancies etc. | H | 2 | TBD | TBD |
+| Total | H | 22 | TBD | TBD |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Additional Libraries
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Code Snippet
 
-### `npm run build` fails to minify
+Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  Code snippet should not be greater than 10 lines of code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+```
+{
+  // CODE SNIPPET
+}
+```
