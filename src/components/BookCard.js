@@ -104,9 +104,11 @@ const BookCard = () => {
   return (
     <div className="card">
       <h2>{sampleData.volumeInfo.title}</h2>
+      <img src={sampleData.volumeInfo.imageLinks.smallThumbnail} />
       <h3>{sampleData.volumeInfo.subtitle}</h3>
       <p>{sampleData.volumeInfo.authors[0]}</p>
       <p>{sampleData.volumeInfo.authors[1]}</p>
+      
     </div>
   )
 }
