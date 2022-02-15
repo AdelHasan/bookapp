@@ -1,3 +1,10 @@
+import Header from "./components/Header"
+import EmbeddedView from "./components/EmbeddedView"
+import BookCard from "./components/BookCard"
+import SearchBox from "./components/SearchBox"
+import Footer from "./components/Footer"
+
+
 function App() {
   
   
@@ -12,7 +19,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Project 2</h1>
+      
+      <Header />
+      <SearchBox />
+      <BookCard />
+      <EmbeddedView />
+      <Footer />
     </div>
   );
 }
