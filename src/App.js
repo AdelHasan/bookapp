@@ -10,28 +10,38 @@ import axios from 'axios'
 
 function App() {
   const [books, setBooks] = useState(null);
-  const [searchValue, setSearchValue] = useState("curtain")
-  const [searchBoxVal, setSearchBoxVal] = useState("flower")
+  const [searchValue, setSearchValue] = useState("book")
+  const [searchBoxVal, setSearchBoxVal] = useState("")
 
-  const handleUpdate = (e) => {
-    setSearchBoxVal(e.target.value)
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchValue(e.target.value)
+    console.log(searchBoxVal);
   }
 
-  const handleSubmit = (val) => {
-     setSearchValue(val)
+  const handleSubmit = (e) => {
+    e.preventDefault() 
+    // 
+    makeAPICall();
+    console.log(books)
   }
 
   
   const url = `https://www.googleapis.com/books/v1/volumes?q=${searchValue}&key=AIzaSyDgs0P5NgyAp6l1iSp--NyhrT9MmDa1U9k`;
-
-  useEffect(async () => {
+    
+    const makeAPICall = async () => {
     const response = await fetch(url);
     const data = await response.json();
     const item = data.items;
     // console.log("item", item);
     setBooks(item);
+    }
+    
+
+  useEffect(() => {
+    makeAPICall();
  
-  }, [searchValue]);
+  }, []);
 
   // console.log(books);
     if (books) {
@@ -39,7 +49,11 @@ function App() {
       <div className="App">
         
         <Header />
-        <SearchBox searchBoxVal={searchBoxVal} handleUpdate={handleUpdate} handleSubmit={handleSubmit}/>
+        {/* <SearchBox searchBoxVal={searchBoxVal} handleUpdate={handleUpdate} handleSubmit={handleSubmit}/> */}
+        <form>
+          <input type="text"  placeholder="search books" onChange={handleChange} />
+          <input type="submit" onClick={handleSubmit} value="search"/>
+        </form>
         <CardContainer books={books}/>
         {/* <EmbeddedView /> */}
         <Footer />
