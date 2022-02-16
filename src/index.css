@@ -28,3 +28,11 @@ code {
   text-align: center;
   border: 1px solid black;
 }
+
+.cardcontainer {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  
+}
