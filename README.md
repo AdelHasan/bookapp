@@ -193,3 +193,7 @@ Use this section to include a brief code snippet of functionality that you are p
   // CODE SNIPPET
 }
 ```
+
+## Goals for Code Today:
+- Get API call working => maps correctly to card formatting function => rendered withing a search results display component => integrate this component into App.js
+- See about embedded reader
