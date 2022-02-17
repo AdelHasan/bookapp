@@ -18,7 +18,7 @@ const CardContainer = ({ books, addToLibrary, library }) => {
       {list.map((item, index) => (
         
         
-        <div className="card col col-lg-4 col-md-6" key={index}>
+        <div className="card col-sm-12 col-lg-4 col-md-6" key={index}>
           <h3>{item.volumeInfo.title}</h3>
           {item.volumeInfo.imageLinks ? (
             <img src={item.volumeInfo.imageLinks.smallThumbnail} />
