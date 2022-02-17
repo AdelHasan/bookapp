@@ -31,10 +31,10 @@ code {
   border: 1px solid black;
 }
 
-.cardcontainer {
+/* .cardcontainer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   
-}
+} */

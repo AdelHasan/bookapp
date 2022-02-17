@@ -52,9 +52,9 @@ function App() {
         <Header />
         </div>
         {/* <SearchBox searchBoxVal={searchBoxVal} handleUpdate={handleUpdate} handleSubmit={handleSubmit}/> */}
-        <form>
-          <input type="text"  placeholder="search books" onChange={handleChange} />
-          <input type="submit" onClick={handleSubmit} value="search"/>
+        <form className="row">
+          <input type="text"  placeholder="search books" onChange={handleChange} className="col-8"/>
+          <input type="submit" onClick={handleSubmit} value="search" className="col-4"/>
         </form>
         <CardContainer books={books}/>
         {/* <EmbeddedView /> */}

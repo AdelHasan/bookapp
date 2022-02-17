@@ -12,9 +12,9 @@ const CardContainer = ({ books }) => {
   // }, [list]);
 
   return (
-    <div className="cardcontainer" key={books[0].volumeInfo.title}>
+    <div className="cardcontainer row" key={books[0].volumeInfo.title}>
       {list.map((item, index) => (
-        <div className="card" key={index}>
+        <div className="card col col-lg-4 col-md-6" key={index}>
           <h2>{item.volumeInfo.title}</h2>
           {item.volumeInfo.imageLinks ? (
             <img src={item.volumeInfo.imageLinks.smallThumbnail} />
