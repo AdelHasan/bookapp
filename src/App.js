@@ -24,7 +24,7 @@ function App() {
   };
 
   const addToLibrary = (link) => {
-    setLibrary([...library, link]);
+    // setLibrary([...library, link]);
     let libraryCopy = library.slice();
     libraryCopy.push(link);
     setLibrary(libraryCopy);
@@ -71,13 +71,13 @@ function App() {
               type="text"
               placeholder="search books"
               onChange={handleChange}
-              className="form-control-md col-11"
+              className="form-control-md col-10"
             />
             <input
               type="submit"
               onClick={handleSubmit}
               value="search"
-              className="btn btn-primary col-1"
+              className="btn btn-primary col-2"
             />
           </form>
           <CardContainer
@@ -88,10 +88,10 @@ function App() {
           {/* <div className="row">
             <ReadingList library={library} />
           </div> */}
-          <Router>
-            <div>
-              <Link to="/">About</Link>
-              <Link to="/readinglist">Reading List</Link>
+          <Router className="text-center">
+            <div className="text-center">
+              <Link className="btn btn-primary text-center" to="/">About</Link>
+              <Link className="btn btn-primary text-center" to="/readinglist">Reading List</Link>
             </div>
             <Routes>
               <Route path="/" element={<About />} />

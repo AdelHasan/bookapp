@@ -7,10 +7,10 @@ const Header = () => {
       <h1 className="text-center">Books App</h1>
       <nav>
         <ul>
-          <Router>
+          {/* <Router>
           <Link to="/">About</Link>
           <Link to="/readinglist">Reading List</Link>
-          </Router>
+          </Router> */}
         </ul>
       </nav>
     </div>

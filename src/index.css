@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: beige;
+  background-color: #a0522d;
+  /* color: white; */
 }
 
 code {
@@ -15,6 +16,7 @@ code {
 
 h1 {
   text-align: center;
+  color: white;
 }
 
 .card {
@@ -41,15 +43,30 @@ h1 {
   height: 200px;
 }
 
-nav li {
+li {
   list-style-type: none;
-  display: inline-block;
+  /* display: inline-block; */
+  margin: 10px;
+  
+}
+
+
+
+a:hover {
+  color: yellow;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+nav li {
+  
   margin: 10px;
 }
-/* .cardcontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  
-} */
+.cardcontainer {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
