@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import BookCard from "./BookCard";
+
 
 const CardContainer = ({ books, addToLibrary, library }) => {
   const [list, setList] = useState(books);
-  useEffect(() => { setList(books) }, [books]);
+  useEffect(() => {
+    setList(books);
+  }, [books]);
 
-  console.log(books);
+  // console.log(books);
 
   // useEffect(() => {
   //   setList(books);
@@ -14,6 +16,8 @@ const CardContainer = ({ books, addToLibrary, library }) => {
   return (
     <div className="cardcontainer row" key={books[0].volumeInfo.title}>
       {list.map((item, index) => (
+        
+        
         <div className="card col col-lg-4 col-md-6" key={index}>
           <h3>{item.volumeInfo.title}</h3>
           {item.volumeInfo.imageLinks ? (
@@ -31,8 +35,28 @@ const CardContainer = ({ books, addToLibrary, library }) => {
           ) : (
             <p>Authors Not Available</p>
           )}
-          {item.volumeInfo.previewLink ? <a href={item.volumeInfo.previewLink} target="_blank" className="btn btn-primary">Read</a> : <p>preview not available</p>}
-          <button className="btn btn-primary" onClick={() => {addToLibrary(item.volumeInfo.previewLink)}} >Reading List</button>
+          {item.volumeInfo.previewLink ? (
+            <a
+              href={item.volumeInfo.previewLink}
+              target="_blank"
+              className="btn btn-primary"
+            >
+              Read
+            </a>
+          ) : (
+            <p>preview not available</p>
+          )}
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              addToLibrary({
+                link: item.volumeInfo.previewLink,
+                title: item.volumeInfo.title
+              });
+            }}
+          >
+            Reading List
+          </button>
         </div>
       ))}
     </div>
