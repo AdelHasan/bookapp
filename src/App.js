@@ -63,35 +63,39 @@ function App() {
           </Routes>
         </Router> */}
         <div>
-          <div className="row">
+          <div className="row text-center">
             <Header />
-          </div>
-          <form className="row">
+          
+          <form >
             <input
               type="text"
               placeholder="search books"
               onChange={handleChange}
-              className="form-control-md col-10"
+              className="form-control col-8"
             />
             <input
               type="submit"
               onClick={handleSubmit}
               value="search"
-              className="btn btn-primary col-2"
+              className="btn btn-primary col-12"
             />
           </form>
+          </div>
+          <div className="row">
           <CardContainer
             books={books}
             addToLibrary={addToLibrary}
             library={library}
+            
           />
+          </div>
           {/* <div className="row">
             <ReadingList library={library} />
           </div> */}
           <Router className="text-center">
             <div className="text-center">
-              <Link className="btn btn-primary text-center" to="/">About</Link>
-              <Link className="btn btn-primary text-center" to="/readinglist">Reading List</Link>
+              <Link className="text-center" to="/">About</Link>
+              <Link className="text-center" to="/readinglist">Reading List</Link>
             </div>
             <Routes>
               <Route path="/" element={<About />} />

@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Link} from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className="header text-center">
+    <div className="col">
       <h1 className="text-center">Books App</h1>
       <nav>
         <ul>

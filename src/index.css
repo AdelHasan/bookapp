@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #a0522d;
+  background-color: #ffebcd;
   /* color: white; */
 }
 
@@ -21,7 +21,7 @@ h1 {
 
 .card {
   text-align: center;
-  box-shadow: 10px 5px 5px black;
+  box-shadow: 2.5px 2.5px 2.5px black;
   width: 300px;
   height: auto;
   margin: 10px;
@@ -68,5 +68,6 @@ nav li {
 }
 .cardcontainer {
   border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  /* border-top: 1px solid black; */
+  padding-top: 12px;
 }

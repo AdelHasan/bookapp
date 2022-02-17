@@ -14,11 +14,12 @@ const CardContainer = ({ books, addToLibrary, library }) => {
   // }, [list]);
 
   return (
-    <div className="cardcontainer row" key={books[0].volumeInfo.title}>
+    <div className="cardcontainer col text-center" key={books[0].volumeInfo.title}>
+      <div className="row text-center">
       {list.map((item, index) => (
         
         
-        <div className="card col-sm-12 col-lg-4 col-md-6" key={index}>
+        <div className="card col-sm-12 col-lg-4 col-md-6 text-center" key={index}>
           <h3>{item.volumeInfo.title}</h3>
           {item.volumeInfo.imageLinks ? (
             <img src={item.volumeInfo.imageLinks.smallThumbnail} />
@@ -61,6 +62,7 @@ const CardContainer = ({ books, addToLibrary, library }) => {
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 };
