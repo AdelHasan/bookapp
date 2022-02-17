@@ -101,6 +101,11 @@ const BookCard = () => {
     }
 }
   
+  // Map over API return data
+  // For each entry return a div with the following components
+  // Perhaps a separate component in which these are arranged and displayed, then import THAT into App.js
+  // 
+
   return (
     <div className="card">
       <h2>{sampleData.volumeInfo.title}</h2>
