@@ -31,6 +31,7 @@ const CardContainer = ({ books }) => {
           ) : (
             <p>Authors Not Available</p>
           )}
+          {item.volumeInfo.previewLink ? <a href={item.volumeInfo.previewLink} target="_blank" className="btn btn-primary">Read</a> : <p>preview not available</p>}
         </div>
       ))}
     </div>

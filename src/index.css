@@ -16,6 +16,8 @@ code {
   text-align: center;
   border: 1px solid black;
   width: 300px;
+  height: auto;
+  margin: auto;
 }
 
 .header {
@@ -32,7 +34,7 @@ code {
 .cardcontainer {
   display: flex;
   flex-direction: column;
-  
+  justify-content: space-around;
   align-items: center;
   
 }

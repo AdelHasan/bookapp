@@ -33,6 +33,7 @@ function App() {
     const response = await fetch(url);
     const data = await response.json();
     const item = data.items;
+    console.log(data)
     // console.log("item", item);
     setBooks(item);
     }
@@ -46,9 +47,10 @@ function App() {
   // console.log(books);
     if (books) {
     return (
-      <div className="App">
-        
+      <div className="App container">
+        <div className="row">
         <Header />
+        </div>
         {/* <SearchBox searchBoxVal={searchBoxVal} handleUpdate={handleUpdate} handleSubmit={handleSubmit}/> */}
         <form>
           <input type="text"  placeholder="search books" onChange={handleChange} />
@@ -56,7 +58,9 @@ function App() {
         </form>
         <CardContainer books={books}/>
         {/* <EmbeddedView /> */}
+        <div className="row">
         <Footer />
+        </div>
       </div>
     );
     } else {
