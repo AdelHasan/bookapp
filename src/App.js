@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [books, setBooks] = useState(null);
-  const [searchValue, setSearchValue] = useState("book");
+  const [searchValue, setSearchValue] = useState("javascript");
   const [library, setLibrary] = useState([]);
 
   const handleChange = (e) => {
@@ -49,11 +49,11 @@ function App() {
   if (books) {
     return (
       <div className="App container">
-        <Router>
-        <div>
-              <Link to="/">About</Link>
-              <Link to="/readinglist">Reading List</Link>
-            </div>
+        {/* <Router>
+          <div>
+            <Link to="/">About</Link>
+            <Link to="/readinglist">Reading List</Link>
+          </div>
           <Routes>
             <Route path="/" element={<About />} />
             <Route
@@ -61,11 +61,10 @@ function App() {
               element={<ReadingList library={library} />}
             />
           </Routes>
-        </Router>
+        </Router> */}
         <div>
           <div className="row">
             <Header />
-            
           </div>
           <form className="row">
             <input
@@ -89,6 +88,19 @@ function App() {
           {/* <div className="row">
             <ReadingList library={library} />
           </div> */}
+          <Router>
+            <div>
+              <Link to="/">About</Link>
+              <Link to="/readinglist">Reading List</Link>
+            </div>
+            <Routes>
+              <Route path="/" element={<About />} />
+              <Route
+                path="/readinglist"
+                element={<ReadingList library={library} />}
+              />
+            </Routes>
+          </Router>
 
           <div className="row">
             <Footer />
