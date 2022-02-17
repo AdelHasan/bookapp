@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: steelblue;
 }
 
 code {
@@ -12,12 +13,18 @@ code {
     monospace;
 }
 
+h1 {
+  text-align: center;
+}
+
 .card {
   text-align: center;
-  border: 1px solid black;
+  box-shadow: 10px 5px 5px black;
   width: 300px;
   height: auto;
-  margin: auto;
+  margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .header {
@@ -28,9 +35,17 @@ code {
 
 .footer {
   text-align: center;
-  border: 1px solid black;
+  border-top: 1px solid black;
+}
+.cardcontainer img {
+  height: 200px;
 }
 
+nav li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 10px;
+}
 /* .cardcontainer {
   display: flex;
   flex-direction: column;

@@ -1,11 +1,13 @@
 
 const Header = () => {
   return (
-    <div className="header">
-      <h1>Books App</h1>
+    <div className="header text-center">
+      <h1 className="text-center">Books App</h1>
       <nav>
-        <a href="#">Search</a>
-        <a href="#">Library</a>
+        <ul>
+          <li>Search</li>
+          <li>Library</li>
+        </ul>
       </nav>
     </div>
   )

@@ -12,6 +12,7 @@ function App() {
   const [books, setBooks] = useState(null);
   const [searchValue, setSearchValue] = useState("book")
   const [searchBoxVal, setSearchBoxVal] = useState("")
+  const [library, setLibrary] = useState([]);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -53,10 +54,10 @@ function App() {
         </div>
         {/* <SearchBox searchBoxVal={searchBoxVal} handleUpdate={handleUpdate} handleSubmit={handleSubmit}/> */}
         <form className="row">
-          <input type="text"  placeholder="search books" onChange={handleChange} className="col-8"/>
-          <input type="submit" onClick={handleSubmit} value="search" className="col-4"/>
+          <input type="text"  placeholder="search books" onChange={handleChange} className="form-control-md col-11"/>
+          <input type="submit" onClick={handleSubmit} value="search" className="btn btn-primary col-1"/>
         </form>
-        <CardContainer books={books}/>
+        <CardContainer books={books} addToLibrary={setLibrary} library={library}/>
         {/* <EmbeddedView /> */}
         <div className="row">
         <Footer />
