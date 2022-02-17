@@ -1,3 +1,5 @@
+import {BrowserRouter as Router, Link} from 'react-router-dom'
+
 
 const Header = () => {
   return (
@@ -5,8 +7,10 @@ const Header = () => {
       <h1 className="text-center">Books App</h1>
       <nav>
         <ul>
-          <li>Search</li>
-          <li>Library</li>
+          <Router>
+          <Link to="/">About</Link>
+          <Link to="/readinglist">Reading List</Link>
+          </Router>
         </ul>
       </nav>
     </div>

@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CardContainer from "./components/CardContainer";
 import ReadingList from "./components/ReadingList";
+import About from "./components/About";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [books, setBooks] = useState(null);
@@ -22,12 +24,12 @@ function App() {
   };
 
   const addToLibrary = (link) => {
-    setLibrary([...library, link])
-    let libraryCopy = library.slice()
-    libraryCopy.push(link)
-    setLibrary(libraryCopy)
-    console.log("LIBRARY:", library)
-  }
+    setLibrary([...library, link]);
+    let libraryCopy = library.slice();
+    libraryCopy.push(link);
+    setLibrary(libraryCopy);
+    console.log("LIBRARY:", library);
+  };
 
   const url = `https://www.googleapis.com/books/v1/volumes?q=${searchValue}&key=AIzaSyDgs0P5NgyAp6l1iSp--NyhrT9MmDa1U9k`;
 
@@ -44,37 +46,53 @@ function App() {
     makeAPICall();
   }, []);
 
-  
   if (books) {
     return (
       <div className="App container">
-        <div className="row">
-          <Header />
-        </div>
-        <form className="row">
-          <input
-            type="text"
-            placeholder="search books"
-            onChange={handleChange}
-            className="form-control-md col-11"
+        <Router>
+        <div>
+              <Link to="/">About</Link>
+              <Link to="/readinglist">Reading List</Link>
+            </div>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route
+              path="/readinglist"
+              element={<ReadingList library={library} />}
+            />
+          </Routes>
+        </Router>
+        <div>
+          <div className="row">
+            <Header />
+            
+          </div>
+          <form className="row">
+            <input
+              type="text"
+              placeholder="search books"
+              onChange={handleChange}
+              className="form-control-md col-11"
+            />
+            <input
+              type="submit"
+              onClick={handleSubmit}
+              value="search"
+              className="btn btn-primary col-1"
+            />
+          </form>
+          <CardContainer
+            books={books}
+            addToLibrary={addToLibrary}
+            library={library}
           />
-          <input
-            type="submit"
-            onClick={handleSubmit}
-            value="search"
-            className="btn btn-primary col-1"
-          />
-        </form>
-        <CardContainer
-          books={books}
-          addToLibrary={addToLibrary}
-          library={library}
-        />
-        <div className="row">
-          <ReadingList library={library} />
-        </div>
-        <div className="row">
-          <Footer />
+          {/* <div className="row">
+            <ReadingList library={library} />
+          </div> */}
+
+          <div className="row">
+            <Footer />
+          </div>
         </div>
       </div>
     );
