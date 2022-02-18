@@ -1,8 +1,8 @@
-# General Assembly SEIR 110-WC Project 2
+# General Assembly SEIR 110-WC Project 2 - Research Launchpad
 
 ## Project Links
 
-- [Github Pages]()
+- [Github Pages](https://adelhasan.github.io/bookapp/)
 
 ## Project Description
 - In this project I will build a responsive UI using react and data drawn from the Google Books API
@@ -148,7 +148,7 @@ Below is a sample of data provided on each volume from the above API request
 - Ability to store notes/snippets from books
 
 ## Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
+
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
@@ -163,37 +163,33 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Reader | Renders embedded reader view for selected volume |
 
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
-
-Unless otherwise noted, time is listed in hours:
+## Timeframes
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create React app and component files, initialize Router | H | 1 | TBD | TBD |
-| Boilerplate UI (Header, Footer, Nav) | H | 2 | TBD | TBD |
-| Generate API requests that render appropriate data | H | 3 | TBD | TBD |
-| Incorporate API requests into functional search component | H | 2 | TBD | TBD |
-| Build Card Components to render Book Data | H | 2 | TBD | TBD |
+| Create React app and component files, initialize Router | H | 1 | 1 | TBD |
+| Boilerplate UI (Header, Footer, Nav) | H | 2 | 3.5 | TBD |
+| Generate API requests that render appropriate data | H | 3 | 3 | TBD |
+| Incorporate API requests into functional search component | H | 2 | 7 | TBD |
+| Build Card Components to render Book Data | H | 2 | 4 | TBD |
 | Build Detailed View for Books | H | 2 | TBD | TBD |
 | Incorporate User Library (with OAauth 2.0 authentication) | H | 5 | TBD | TBD |
-| Instantiate Routes for Search, Library, Reader | H | 3 | TBD | TBD |
-| Polish UI: Colors, Fonts, Display indiscrepancies etc. | H | 2 | TBD | TBD |
+| Instantiate Routes for Search, Library, Reader | H | 3 | 2 | TBD |
+| Polish UI: Colors, Fonts, Display indiscrepancies etc. | H | 2 | 2.5 | TBD |
 | Total | H | 22 | TBD | TBD |
 
 ## Additional Libraries
-
+- Bootstrap
+- React Router
+- 
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  Code snippet should not be greater than 10 lines of code.
+This small piece of code eliminated a roadblock to making my search update upon enter. I used the useEffect hook to update my list with the books (search) prop, with the books prop as the second parameter.
 
 
 ```
-{
-  // CODE SNIPPET
-}
+useEffect(() => {
+    setList(books);
+  }, [books]);
 ```
-
-## Goals for Code Today:
-- Get API call working => maps correctly to card formatting function => rendered withing a search results display component => integrate this component into App.js
-- See about embedded reader
