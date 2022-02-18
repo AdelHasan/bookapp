@@ -73,6 +73,8 @@ nav li {
   /* border-top: 1px solid black; */
   padding-top: 24px;
   padding-bottom: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-light {
@@ -87,3 +89,4 @@ nav li {
 .form-control {
   margin-bottom: 12px;
 }
+
