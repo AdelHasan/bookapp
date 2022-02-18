@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bookapp/static/css/main.9f17e7dc.css",
+    "main.css": "/bookapp/static/css/main.9b0acabc.css",
     "main.js": "/bookapp/static/js/main.e8027dbb.js",
     "static/js/787.9da9e884.chunk.js": "/bookapp/static/js/787.9da9e884.chunk.js",
     "index.html": "/bookapp/index.html",
-    "main.9f17e7dc.css.map": "/bookapp/static/css/main.9f17e7dc.css.map",
+    "main.9b0acabc.css.map": "/bookapp/static/css/main.9b0acabc.css.map",
     "main.e8027dbb.js.map": "/bookapp/static/js/main.e8027dbb.js.map",
     "787.9da9e884.chunk.js.map": "/bookapp/static/js/787.9da9e884.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f17e7dc.css",
+    "static/css/main.9b0acabc.css",
     "static/js/main.e8027dbb.js"
   ]
 }
