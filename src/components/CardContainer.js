@@ -20,7 +20,8 @@ const CardContainer = ({ books, addToLibrary, library }) => {
         
         
         <div className="card col-sm-12 col-lg-4 col-md-6 text-center" key={index}>
-          <h3>{item.volumeInfo.title}</h3>
+          <h3 className="card-title">{item.volumeInfo.title}</h3>
+          <div className="card-body">
           {item.volumeInfo.imageLinks ? (
             <img src={item.volumeInfo.imageLinks.smallThumbnail} />
           ) : (
@@ -41,7 +42,7 @@ const CardContainer = ({ books, addToLibrary, library }) => {
             <a
               href={item.volumeInfo.previewLink}
               target="_blank"
-              className="btn btn-primary col-6"
+              className="btn btn-light"
             >
               Read
             </a>
@@ -49,7 +50,7 @@ const CardContainer = ({ books, addToLibrary, library }) => {
             <p>preview not available</p>
           )}
           <button
-            className="btn btn-primary col-6"
+            className="btn btn-light"
             onClick={() => {
               addToLibrary({
                 link: item.volumeInfo.previewLink,
@@ -59,6 +60,7 @@ const CardContainer = ({ books, addToLibrary, library }) => {
           >
             Reading List
           </button>
+          </div>
           </div>
         </div>
       ))}

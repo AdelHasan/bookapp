@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffebcd;
@@ -16,7 +17,8 @@ code {
 
 h1 {
   text-align: center;
-  color: white;
+  color: black;
+  
 }
 
 .card {
@@ -53,11 +55,11 @@ li {
 
 
 a:hover {
-  color: yellow;
+  color: darkblue;
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
   padding-left: 10px;
 }
@@ -69,5 +71,15 @@ nav li {
 .cardcontainer {
   border-bottom: 1px solid black;
   /* border-top: 1px solid black; */
-  padding-top: 12px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.btn-light {
+  margin-bottom: 5px;
+  border: .25px solid black;
+}
+
+.btn-light:hover {
+  border: 1.5px solid black;
 }

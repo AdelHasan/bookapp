@@ -95,7 +95,7 @@ function App() {
           <Router className="text-center">
             <div className="text-center">
               <Link className="text-center" to="/">About</Link>
-              <Link className="text-center" to="/readinglist">Reading List</Link>
+              <Link className="text-center" to="/readinglist">Reading_List</Link>
             </div>
             <Routes>
               <Route path="/" element={<About />} />
