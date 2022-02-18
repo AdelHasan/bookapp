@@ -83,3 +83,7 @@ nav li {
 .btn-light:hover {
   border: 1.5px solid black;
 }
+
+.form-control {
+  margin-bottom: 12px;
+}
